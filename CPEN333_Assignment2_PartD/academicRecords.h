@@ -20,6 +20,7 @@ private:
 	float grades;
 	int credits;
 	transcript transcripts;
+	string program;
 public:
 	float getGPA() {
 
@@ -29,6 +30,9 @@ public:
 	}
 	void getCredits() {
 
+	}
+	void updateProgram(string newProgram) {
+		program = newProgram;
 	}
 };
 #endif // !__academicRecords__
