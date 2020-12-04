@@ -10,9 +10,9 @@ using namespace std;
 class professor {
 private:
 	int numCourses;
-	string courses[];
 	int numStudents;
-	float grades[];
+	string *grades;
+	string *courses;
 public:
 	void submitGrades() {
 
