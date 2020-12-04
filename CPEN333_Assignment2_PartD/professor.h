@@ -9,7 +9,8 @@ using namespace std;
 
 class professor {
 private:
-	string course;
+	int numCourses;
+	string courses[];
 	int numStudents;
 	float grades[];
 public:

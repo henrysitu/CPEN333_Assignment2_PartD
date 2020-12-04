@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
+#include "academicRecords.h"
 
 using namespace std;
 
@@ -8,13 +9,13 @@ using namespace std;
 #define __SSCWebsite__
 
 struct studentInfo {
-	string courses;
+	string courses[];
 	float grades;
 	int credits;
 };
 
 struct enrolledCourses {
-	string courses;
+	string courses[];
 	float grades;
 	int credits;
 };

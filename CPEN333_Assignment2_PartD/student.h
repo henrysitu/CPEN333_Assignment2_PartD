@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
+#include "bank.h"
+#include "SSCWebsite.h"
+#include "selectionForm.h"
 
 #ifndef __student__
 #define __student__
@@ -16,12 +19,13 @@ struct preferenceForm {
 
 class student {
 private:
+
 	string name;
 	int studentNumber;
 	string SSCuserID;
 	string SSCPassword;
 	preferenceForm selectionForm;
-	string enroledCourses[];
+	string enrolledCourses[];
 public:
 	void submitSelectionForm(preferenceForm form) {
 
