@@ -7,19 +7,7 @@ using namespace std;
 #ifndef __bank__
 #define __bank__
 
-struct studentInfo {
-	string courses;
-	float grades;
-	int credits;
-};
-
-struct enrolledCourses {
-	string courses;
-	float grades;
-	int credits;
-};
-
-class SSCWebsite {
+class bank {
 private:
 	float bankBalance;
 public:
