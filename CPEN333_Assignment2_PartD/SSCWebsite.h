@@ -49,5 +49,8 @@ public:
 	studentInfo getStudentInfo() {
 		return info;
 	}
+	void registerForCourse(string course) {
+		*courses.courses = *courses.courses + course;
+	}
 };
 #endif // !__SSCWebsite__
