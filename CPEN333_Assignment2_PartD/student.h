@@ -10,7 +10,7 @@
 
 using namespace std;
 
-struct preferenceForm {
+struct secYearSelectionForm {
 	string firstChoice;
 	string secondChoice;
 	string thirdChoice;
@@ -19,22 +19,32 @@ struct preferenceForm {
 
 class student {
 private:
-
+	bank* bankAccount;
+	SSCWebsite* SSCAccount;
+	selectionForm* preferenceForm;
 	string name;
 	int studentNumber;
+	secYearSelectionForm selectionForm;
 	string SSCuserID;
 	string SSCPassword;
-	preferenceForm selectionForm;
-	string enrolledCourses[];
+	string* enrolledCourses;
 public:
-	void submitSelectionForm(preferenceForm form) {
-
+	void submitSelectionForm() {
+		preferenceForm->personalStatement = selectionForm.personalStatement;
+		preferenceForm->selectedOrder.firstChoice = selectionForm.firstChoice;
+		preferenceForm->selectedOrder.secondChoice = selectionForm.secondChoice;
+		preferenceForm->selectedOrder.thirdChoice = selectionForm.thirdChoice;
 	}
 	void payFees(float amount) {
-
+		bankAccount->payFees(amount);
 	}
-	void cheat() {
-
+	bool cheat() {
+		int shouldICheat = rand() % 100;
+		if (shouldICheat == 1) {
+			return true;
+		}
+		else
+			return false;
 	}
 	void registerForCourse(string course) {
 
