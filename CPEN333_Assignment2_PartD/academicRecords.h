@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -16,20 +17,22 @@ struct transcript {
 class academicRecords {
 private:
 	float gpa;
-	string courses;
-	float grades;
+	vector<string> courses;
+	vector<float> grades;
 	int credits;
 	transcript transcripts;
 	string program;
 public:
 	float getGPA() {
-
+		return gpa;
 	}
-	void addCoursesAndGrades(string courses[], float grades[], int credits) {
-
+	void addCourseAndGrade(string course, float grade, int credit) {
+		courses.push_back(course);
+		grades.push_back(grade);
+		credits = credits + credit;
 	}
-	void getCredits() {
-
+	int getCredits() {
+		return credits;
 	}
 	void updateProgram(string newProgram) {
 		program = newProgram;
