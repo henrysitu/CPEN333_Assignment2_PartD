@@ -60,6 +60,7 @@ public:
 	}
 	void registerForCourse(string course) {
 		listOfCourses.enrolledCourses.push_back(course);
+		fees += 500;
 	}
 	float getFees(void) {
 		return fees;
@@ -69,6 +70,14 @@ public:
 	}
 	cheatingRecords getCheatingRecords() {
 		return records->getStudentCheatingRecords();
+	}
+	SSCWebsite(studentInfo myInfo, string myProgram, bool amSuspended, float amountOwing, enrolledCourses courses, string myPassword, academicRecords* myRecords) {
+		info = myInfo;
+		program = myProgram;
+		fees = amountOwing;
+		listOfCourses = courses;
+		studentPassword = myPassword;
+		records = myRecords;
 	}
 };
 #endif // !__SSCWebsite__
