@@ -10,6 +10,7 @@ using namespace std;
 
 struct studentInfo {
 	int studentNumber;
+	string name;
 	string *courses;
 	float grades;
 	int credits;
