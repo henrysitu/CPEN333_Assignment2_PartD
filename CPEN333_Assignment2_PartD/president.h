@@ -15,10 +15,12 @@ private:
 
 public:
 	void determineCheating() {
-		int ifCheat = rand() % 2;
-		if (ifCheat == 1)
+		int ifCheat;
+		int comparitor = SSCRecords->getCheatingRecords().numIncidences + 1;
+		ifCheat = rand() % 100;
+		if (ifCheat <= comparitor)
 		{
-			SSCRecords->updateCheatingRecord(SSCRecords->getCheatingRecords().numIncidences);
+			SSCRecords->updateCheatingRecord(comparitor);
 		}
 	}
 };
