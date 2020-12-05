@@ -20,11 +20,11 @@ struct placementOrder {
 };
 
 class selectionAlgorithm {
-public:
+private:
 	academicRecords* records;
 	selectionForm* filledForm;
 	float gpa;
-private:
+public:
 	void determineProgram()
 	{
 		gpa = records->getGPA();
