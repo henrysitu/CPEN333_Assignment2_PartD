@@ -11,8 +11,8 @@ using namespace std;
 struct studentInfo {
 	int studentNumber;
 	string name;
-	string *courses;
-	float grades;
+	vector<string> courses;
+	vector<float> grades;
 	int credits;
 };
 
@@ -50,6 +50,11 @@ public:
 	}
 	studentInfo getStudentInfo() {
 		return info;
+	}
+	void updateStudentInfo(string course, float grade, int credit) {
+		info.courses.push_back(course);
+		info.grades.push_back(grade);
+		info.credits = info.credits + credit;
 	}
 	void registerForCourse(string course) {
 		*courses.courses = *courses.courses + course;
