@@ -20,12 +20,16 @@ private:
 	vector<studentGrades> grades;
 	string course;
 	int courseCredit;
-	SSCWebsite* ssc;
+	vector<SSCWebsite> ssc;
 public:
 	void submitGrades() {
 		for (int i = 0; i < numStudents; i++)
 		{
-			ssc->updateStudentInfo(course, grades[i].grade, courseCredit);
+			for (int j = 0; j < numStudents; j++) {
+				if (ssc[j].getStudentInfo().studentNumber == grades[i].studentNumber)
+					ssc[j].updateStudentInfo(course, grades[i].grade, courseCredit);
+			}
+			
 		}
 	}
 };
