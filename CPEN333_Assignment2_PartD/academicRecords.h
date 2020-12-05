@@ -9,9 +9,10 @@ using namespace std;
 #define __academicRecords__
 
 struct transcript {
-	string courses;
-	float grades;
+	vector<string> courses;
+	vector<float> grades;
 	int credits;
+	int numCourses;
 };
 
 struct cheatingRecords {
@@ -24,20 +25,25 @@ struct cheatingRecords {
 class academicRecords {
 private:
 	float gpa;
-	vector<string> courses;
-	vector<float> grades;
 	int credits;
 	transcript transcripts;
 	string program;
 	cheatingRecords studentCheatingRecords;
 public:
 	float getGPA() {
+		gpa = 0;
+		for (int i = 0; i < transcripts.numCourses; i++)
+		{
+			gpa += transcripts.grades[i];
+		}
+		gpa = gpa / transcripts.numCourses;
 		return gpa;
 	}
 	void addCourseAndGrade(string course, float grade, int credit) {
-		courses.push_back(course);
-		grades.push_back(grade);
-		credits = credits + credit;
+		transcripts.courses.push_back(course);
+		transcripts.grades.push_back(grade);
+		transcripts.credits += credit;
+		transcripts.numCourses += 1;
 	}
 	int getCredits() {
 		return credits;
