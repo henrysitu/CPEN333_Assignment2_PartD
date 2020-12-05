@@ -44,7 +44,7 @@ int main(void) {
 	//selectionForm.personalStatement = "abc";
 
 	string SSCuserID;
-	string SSCPassword;
+	string SSCPassword = "abdced";
 	vector<string> enrolCourses;
 
 	student Student1(Bank1, ssc, preferenceForm, studentName, studentNum, secYrSelectionForm, SSCPassword, SSCuserID, enrolCourses);
@@ -106,7 +106,7 @@ int main(void) {
 	listOfCourses.grades.push_back(aStudentGrade);
 	listOfCourses.credits = totalCredits;
 
-	SSCWebsite theSSCWebsite(info, program, amSuspended, fees, listOfCourses);
+	SSCWebsite theSSCWebsite(info, program, amSuspended, fees, listOfCourses, SSCPassword, records);
 	string courseToRegister = "CPEN333";
 	int userInput;
 	int amount = 5000;

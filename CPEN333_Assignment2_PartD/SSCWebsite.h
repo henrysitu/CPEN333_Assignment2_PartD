@@ -59,7 +59,7 @@ public:
 		info.credits = info.credits + credit;
 	}
 	void registerForCourse(string course) {
-		listOfCourses.enrolledCourses.push_back(course);
+		listOfCourses.enrollCourses.push_back(course);
 		fees += 500;
 	}
 	float getFees(void) {
