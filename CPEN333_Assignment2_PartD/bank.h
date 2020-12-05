@@ -31,5 +31,9 @@ public:
 		else
 			return false;	
 	}
+	bank(float balance, SSCWebsite* ssc) {
+		bankBalance = balance;
+		SSCAccount = ssc;
+	}
 };
 #endif // !__bank__
