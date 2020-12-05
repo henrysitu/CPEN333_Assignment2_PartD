@@ -14,6 +14,13 @@ struct transcript {
 	int credits;
 };
 
+struct cheatingRecords {
+	int numIncidences;
+	string evidence;
+	bool suspensionStatus;
+	int numSuspensionTerms;
+};
+
 class academicRecords {
 private:
 	float gpa;
@@ -22,6 +29,7 @@ private:
 	int credits;
 	transcript transcripts;
 	string program;
+	cheatingRecords cheatingRecords;
 public:
 	float getGPA() {
 		return gpa;
