@@ -17,8 +17,8 @@ struct studentInfo {
 };
 
 struct enrolledCourses {
-	string *courses;
-	float grades;
+	vector<string> enrolledCourses;
+	vector<float> grades;
 	int credits;
 };
 
@@ -28,8 +28,7 @@ private:
 	string program;
 	bool suspended;
 	float fees;
-	enrolledCourses courses;
-	academicRecords studentRecords;
+	enrolledCourses listOfCourses;
 public:
 	bool verifyUserID(string ID) {
 		if (ID.empty() != 0)
@@ -58,13 +57,10 @@ public:
 		info.credits = info.credits + credit;
 	}
 	void registerForCourse(string course) {
-		*courses.courses = *courses.courses + course;
+		listOfCourses.enrolledCourses.push_back(course);
 	}
 	float getFees(void) {
 		return fees;
-	}
-	void updateAcademicRecords() {
-		studentRecords.getStudentCheatingRecords() 
 	}
 };
 #endif // !__SSCWebsite__
