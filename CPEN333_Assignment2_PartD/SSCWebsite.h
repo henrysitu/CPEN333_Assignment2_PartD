@@ -29,16 +29,17 @@ private:
 	bool suspended;
 	float fees;
 	enrolledCourses listOfCourses;
+	string studentPassword;
 	academicRecords* records;
 public:
 	bool verifyUserID(string ID) {
-		if (ID.empty() != 0)
+		if (ID.compare(info.name) == 0)
 			return true;
 		else
 			return false;
 	}
 	bool verifyPassword(string password) {
-		if (password.empty() != 0 || password.length() > 4)
+		if (studentPassword.compare(password))
 			return true;
 		else
 			return false;
