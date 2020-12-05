@@ -24,16 +24,16 @@ private:
 	selectionForm* preferenceForm;
 	string name;
 	int studentNumber;
-	secYearSelectionForm selectionForm;
+	secYearSelectionForm filledForm;
 	string SSCuserID;
 	string SSCPassword;
 	vector<string> enrolledCourses;
 public:
 	void submitSelectionForm() {
-		preferenceForm->personalStatement = selectionForm.personalStatement;
-		preferenceForm->selectedOrder.firstChoice = selectionForm.firstChoice;
-		preferenceForm->selectedOrder.secondChoice = selectionForm.secondChoice;
-		preferenceForm->selectedOrder.thirdChoice = selectionForm.thirdChoice;
+		preferenceForm->personalStatement = filledForm.personalStatement;
+		preferenceForm->selectedOrder.firstChoice = filledForm.firstChoice;
+		preferenceForm->selectedOrder.secondChoice = filledForm.secondChoice;
+		preferenceForm->selectedOrder.thirdChoice = filledForm.thirdChoice;
 	}
 	void payFees(float amount) {
 		bankAccount->payFees(amount);
@@ -48,7 +48,9 @@ public:
 	}
 	void registerForCourse(string course) {
 		SSCAccount->registerForCourse(course);
+		enrolledCourses.push_back(course);
 	}
+	student(bank* bankAcc, SSCWebsite* sscAcc, selectionForm* form, string personsName, int IDNumber, secYearSelectionForm compForm, string userID, string password)
 };
 
 #endif // !__student__
