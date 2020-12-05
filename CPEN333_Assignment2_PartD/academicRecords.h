@@ -48,5 +48,10 @@ public:
 	cheatingRecords getStudentCheatingRecords(){
 		return studentCheatingRecords;
 	}
+	void updateCheatingRecords(int numSuspensionTerms) {
+		studentCheatingRecords.suspensionStatus = true;
+		studentCheatingRecords.numSuspensionTerms += numSuspensionTerms;
+		studentCheatingRecords.numIncidences += 1;
+	}
 };
 #endif // !__academicRecords__
