@@ -66,5 +66,8 @@ public:
 	void updateCheatingRecord(int numSuspendedSemesters) {
 		records->updateCheatingRecords(numSuspendedSemesters);
 	}
+	cheatingRecords getCheatingRecords() {
+		return records->getStudentCheatingRecords();
+	}
 };
 #endif // !__SSCWebsite__

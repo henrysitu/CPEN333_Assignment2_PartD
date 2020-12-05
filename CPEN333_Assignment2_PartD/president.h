@@ -11,17 +11,14 @@ using namespace std;
 
 class president {
 private: 
-	academicRecords* studentAcademicRecords;
+	SSCWebsite* SSCRecords;
 
 public:
-	bool determineCheating() {
-		if (studentAcademicRecords->getStudentCheatingRecords().numIncidences > 0)
+	void determineCheating() {
+		int ifCheat = rand() % 2;
+		if (ifCheat == 1)
 		{
-			return true;
-		}
-		else
-		{
-
+			SSCRecords->updateCheatingRecord(SSCRecords->getCheatingRecords().numIncidences);
 		}
 	}
 };
