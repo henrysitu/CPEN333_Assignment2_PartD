@@ -26,22 +26,28 @@ int main(void) {
 	int totalCredits = 3;
 	float aStudentGrade = 90.0;
 
+	// bank 
+	float bankBalance = 10000;
+	SSCWebsite* ssc;
+	bank Bank1(bankBalance, ssc);
+
 	// student
 	bank* bankAccount;
 	SSCWebsite* SSCAccount;
 	selectionForm* preferenceForm;
 	int studentNum = 12345678;
-	string studentName = "AStudent";
-	secYearSelectionForm selectionForm;
-	selectionForm.firstChoice = "MECH";
-	selectionForm.secondChoice = "CPEN";
-	selectionForm.thirdChoice = "ELEC";
-	selectionForm.personalStatement = "abc";
+	string studentName = "aStudent";
+	secYearSelectionForm secYrSelectionForm;
+	//selectionForm.firstChoice = "MECH";
+	//selectionForm.secondChoice = "CPEN";
+	//selectionForm.thirdChoice = "ELEC";
+	//selectionForm.personalStatement = "abc";
 
 	string SSCuserID;
 	string SSCPassword;
 	vector<string> enrolledCourses;
 
+	student Student1(bankAccount, ssc, preferenceForm, secYrSelectionForm, studentName, SSCuserID, SSCPassword, enrolledCourses);
 
 	// academic records
 	float gpa = 3.8;
@@ -49,12 +55,10 @@ int main(void) {
 	string program = "MECH";
 	cheatingRecords studentCheatingRecords;
 
-	// bank 
-	float bankBalance = 10000;
-	SSCWebsite* ssc;
-
 	// president
 	///ssc
+	president thePresident(ssc);
+
 	/// 
 	// professor
 	int numStudents = 1;
@@ -64,13 +68,23 @@ int main(void) {
 	string courseToSubmitGrade = "MECH420";
 	///ssc
 
+	professor Professor1(numStudents, student1Grade, courseToSubmitGrade, ssc);
+
+	// selection form
+	///no private var
+	placementOrder myOrder;
+	myOrder.firstChoice = "MECH";
+	myOrder.secondChoice = "CPEN";
+	myOrder.thirdChoice = "ELEC";
+	string myStatement = "abc";
+	selectionForm mySelectionForm(myOrder, myStatement);
+
 	// selection algorithm
 	academicRecords* records;
 	selectionForm* filledForm;
 	///float gpa;
+	selectionAlgorithm theSelectionAlgorithm(records, filledForm, gpa);
 	
-	// selection form
-	///no private var
 	
 	// SSC Website
 	studentInfo info;
@@ -78,20 +92,20 @@ int main(void) {
 	info.name = studentName;
 	info.courses.push_back(aCourse);
 	info.grades.push_back(aStudentGrade);
-	int credits = totalCredits;
+	info.credits = totalCredits;
 	///string program
-	bool suspended = false;
+	bool amSuspended = false;
 	float fees = 3000;
 	enrolledCourses listOfCourses;
 	listOfCourses.enrolledCourses.push_back(aCourse);
 	listOfCourses.grades.push_back(aStudentGrade);
 	listOfCourses.credits = totalCredits;
 
+	SSCWebsite theSSCWebsite(info, program, amSuspended, fees, listOfCourses);
 	string courseToRegister = "CPEN333";
 	int userInput;
 	int amount = 5000;
 
-	
 	while (1)
 	{
 		cout << "If the user is a student: \n";

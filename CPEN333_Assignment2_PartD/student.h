@@ -50,7 +50,7 @@ public:
 		SSCAccount->registerForCourse(course);
 		enrolledCourses.push_back(course);
 	}
-	student(bank* bankAcc, SSCWebsite* sscAcc, selectionForm* form, string personsName, int IDNumber, secYearSelectionForm compForm, string userID, string password)
+	student(bank* bankAcc, SSCWebsite* sscAcc, selectionForm* form, string personsName, int IDNumber, secYearSelectionForm compForm, string userID, string password);
 };
 
 #endif // !__student__
