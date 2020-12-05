@@ -47,7 +47,7 @@ public:
 			return false;
 	}
 	void registerForCourse(string course) {
-
+		SSCAccount->registerForCourse(course);
 	}
 };
 
