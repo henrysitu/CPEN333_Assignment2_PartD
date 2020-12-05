@@ -27,7 +27,7 @@ private:
 	secYearSelectionForm selectionForm;
 	string SSCuserID;
 	string SSCPassword;
-	string* enrolledCourses;
+	vector<string> enrolledCourses;
 public:
 	void submitSelectionForm() {
 		preferenceForm->personalStatement = selectionForm.personalStatement;
