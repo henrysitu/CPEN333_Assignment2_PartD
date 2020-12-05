@@ -52,5 +52,8 @@ public:
 	void registerForCourse(string course) {
 		*courses.courses = *courses.courses + course;
 	}
+	float getFees(void) {
+		return fees;
+	}
 };
 #endif // !__SSCWebsite__
