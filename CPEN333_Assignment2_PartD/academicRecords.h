@@ -25,7 +25,6 @@ struct cheatingRecords {
 class academicRecords {
 private:
 	float gpa;
-	int credits;
 	transcript transcripts;
 	string program;
 	cheatingRecords studentCheatingRecords;
@@ -46,7 +45,7 @@ public:
 		transcripts.numCourses += 1;
 	}
 	int getCredits() {
-		return credits;
+		return transcripts.credits;
 	}
 	void updateProgram(string newProgram) {
 		program = newProgram;
