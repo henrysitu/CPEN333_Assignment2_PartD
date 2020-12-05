@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "academicRecords.h"
+#include "selectionForm.h"
 
 using namespace std;
 
@@ -21,10 +22,8 @@ struct placementOrder {
 class selectionAlgorithm {
 public:
 	academicRecords* records;
-	placementOrder selectedOrder;
+	selectionForm* filledForm;
 	float gpa;
-	string result;
-	string personalStatement;
 private:
 	void determineProgram()
 	{
@@ -33,21 +32,21 @@ private:
 		int secondIndex;
 		int thirdIndex;
 		for (int i = 0; i < numCourses; i++) {
-			if (selectedOrder.firstChoice.compare(programList[i]) == 0)
+			if (filledForm->selectedOrder.firstChoice.compare(programList[i]) == 0)
 				firstIndex = i;
-			else if (selectedOrder.secondChoice.compare(programList[i]) == 0)
+			else if (filledForm->selectedOrder.secondChoice.compare(programList[i]) == 0)
 				secondIndex = i;
-			else if (selectedOrder.thirdChoice.compare(programList[i]) == 0)
+			else if (filledForm->selectedOrder.thirdChoice.compare(programList[i]) == 0)
 				thirdIndex = i;
 		}
-		if (gpa >= minGrades[firstIndex]) {
-			records->updateProgram(selectedOrder.firstChoice);
+		if (gpa >= minGrades[firstIndex] && filledForm->personalStatement.empty() != 0) {
+			records->updateProgram(filledForm->selectedOrder.firstChoice);
 		}
-		else if (gpa >= minGrades[secondIndex]) {
-			records->updateProgram(selectedOrder.secondChoice);
+		else if (gpa >= minGrades[secondIndex] && filledForm->personalStatement.empty() != 0) {
+			records->updateProgram(filledForm->selectedOrder.secondChoice);
 		}
 		else{
-			records->updateProgram(selectedOrder.thirdChoice);
+			records->updateProgram(filledForm->selectedOrder.thirdChoice);
 		}
 	}
 
