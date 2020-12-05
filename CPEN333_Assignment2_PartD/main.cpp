@@ -101,8 +101,8 @@ int main(void) {
 		vector<float> grades;
 		int credits;
 	};
-
-	enrolledCourses.push_back(aCourse);
+	enrolledCourses listOfCourses;
+	listOfCourses.enrollCourses.push_back(aCourse);
 	listOfCourses.grades.push_back(aStudentGrade);
 	listOfCourses.credits = totalCredits;
 
