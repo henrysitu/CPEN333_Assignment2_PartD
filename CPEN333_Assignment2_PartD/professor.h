@@ -29,7 +29,6 @@ public:
 				if (ssc[j].getStudentInfo().studentNumber == grades[i].studentNumber)
 					ssc[j].updateStudentInfo(course, grades[i].grade, courseCredit);
 			}
-			
 		}
 	}
 };
