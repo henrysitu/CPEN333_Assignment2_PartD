@@ -28,20 +28,37 @@ int main(void) {
 	SSCWebsite sscWebsite;
 	student Student1;
 
+	string courseToRegister = "CPEN333";
 	int userInput;
 	int amount = 5000;
+
+	string courseToSubmitGrade = "MECH420";
 	while (1)
 	{
+		cout << "If the user is a student: \n";
 		cout << "Enter \n1: register courses \n2: pay fees \n3: submit application\n";
 		cin >> userInput;
 
 		if (userInput == 1) // register courses
 		{
-			Student1.registerForCourse("MECH421");
+			Student1.registerForCourse(courseToRegister);
 		}
 		else if (userInput == 2)
 		{
 			Student1.payFees(amount);
+		}
+		else if (userInput == 3)
+		{
+			Student1.submitSelectionForm();
+		}
+
+		cout << "If the user is a professor: \n";
+		cout << "Enter \n1: Submit course grades\n";
+		cin >> userInput;
+
+		if (userInput == 1) // register courses
+		{
+			Professor1.submitGrades();
 		}
 	}
 	return 0;
