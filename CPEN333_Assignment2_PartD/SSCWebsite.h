@@ -29,6 +29,7 @@ private:
 	bool suspended;
 	float fees;
 	enrolledCourses courses;
+	academicRecords studentRecords;
 public:
 	bool verifyUserID(string ID) {
 		if (ID.empty() != 0)
@@ -61,6 +62,9 @@ public:
 	}
 	float getFees(void) {
 		return fees;
+	}
+	void updateAcademicRecords() {
+		studentRecords.getStudentCheatingRecords() 
 	}
 };
 #endif // !__SSCWebsite__

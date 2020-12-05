@@ -22,7 +22,6 @@ public:
 
 		else
 			cout << "Unsuccessful transaction" << endl;
-		
 	}
 	bool payFees(float amount) {
 		if (amount <= bankBalance) {

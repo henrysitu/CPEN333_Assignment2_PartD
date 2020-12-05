@@ -29,7 +29,7 @@ private:
 	int credits;
 	transcript transcripts;
 	string program;
-	cheatingRecords cheatingRecords;
+	cheatingRecords studentCheatingRecords;
 public:
 	float getGPA() {
 		return gpa;
@@ -44,6 +44,9 @@ public:
 	}
 	void updateProgram(string newProgram) {
 		program = newProgram;
+	}
+	cheatingRecords getStudentCheatingRecords(){
+		return studentCheatingRecords;
 	}
 };
 #endif // !__academicRecords__
