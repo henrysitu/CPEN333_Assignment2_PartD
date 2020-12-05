@@ -16,19 +16,17 @@ struct studentGrades {
 
 class professor {
 private:
-	int numCourses;
 	int numStudents;
 	vector<studentGrades> grades;
-	vector<string> courses;
+	string course;
+	int courseCredit;
+	SSCWebsite* ssc;
 public:
 	void submitGrades() {
-		for (int i = 0; i < numCourses; i++)
+		for (int i = 0; i < numStudents; i++)
 		{
-			grades[i].grade;
+			ssc->updateStudentInfo(course, grades[i].grade, courseCredit);
 		}
-	}
-	void modifyGrades() {
-
 	}
 };
 #endif // !__professor__
