@@ -49,6 +49,10 @@ public:
 			records->updateProgram(filledForm->selectedOrder.thirdChoice);
 		}
 	}
-
+	selectionAlgorithm(academicRecords* record, selectionForm* form, float average) {
+		records = record;
+		filledForm = form;
+		gpa = average;
+	}
 };
 #endif // !__selectionAlgorithm__
