@@ -9,6 +9,7 @@ using namespace std;
 #define __SSCWebsite__
 
 struct studentInfo {
+	int studentNumber;
 	string *courses;
 	float grades;
 	int credits;
