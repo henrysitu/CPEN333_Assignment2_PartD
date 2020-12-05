@@ -17,7 +17,7 @@ struct studentInfo {
 };
 
 struct enrolledCourses {
-	vector<string> enrolledCourses;
+	vector<string> enrollCourses;
 	vector<float> grades;
 	int credits;
 };
