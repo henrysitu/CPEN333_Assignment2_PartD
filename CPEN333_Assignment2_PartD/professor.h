@@ -31,5 +31,12 @@ public:
 			}
 		}
 	}
+	professor(int numberStudents, vector<studentGrades> gradeList, string courseID, int courseCredits, vector<SSCWebsite> sscAcc) {
+		numStudents = numberStudents;
+		grades = gradeList;
+		course = courseID;
+		courseCredit = courseCredits;
+		ssc = sscAcc;
+	}
 };
 #endif // !__professor__

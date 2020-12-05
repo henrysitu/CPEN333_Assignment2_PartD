@@ -23,5 +23,8 @@ public:
 			SSCRecords->updateCheatingRecord(comparitor);
 		}
 	}
+	president(SSCWebsite* sscAcc) {
+		SSCRecords = sscAcc;
+	}
 };
 #endif // !__president__
